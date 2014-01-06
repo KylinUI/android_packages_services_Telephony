@@ -201,6 +201,8 @@ public class CallFeaturesSetting extends PreferenceActivity
 
     private static final String BUTTON_NON_INTRUSIVE_INCALL_KEY = "button_non_intrusive_incall";
 
+    private static final String FLIP_ACTION_KEY = "flip_action";
+
     private Intent mContactListIntent;
 
     /** Event for Async voicemail change call */
@@ -292,6 +294,7 @@ public class CallFeaturesSetting extends PreferenceActivity
     private SipSharedPreferences mSipSharedPreferences;
     private PreferenceScreen mButtonBlacklist;
     private CheckBoxPreference mNonIntrusiveInCall;
+    private ListPreference mFlipAction;
 
     private class VoiceMailProvider {
         public VoiceMailProvider(String name, Intent intent) {
@@ -621,9 +624,21 @@ public class CallFeaturesSetting extends PreferenceActivity
             }
         } else if (preference == mButtonSipCallOptions) {
             handleSipCallOptionsChange(objValue);
+        } else if (preference == mFlipAction) {
+            int index = mFlipAction.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.CALL_FLIP_ACTION_KEY, index);
+            updateFlipActionSummary(index);
         }
         // always let the preference setting proceed.
         return true;
+    }
+
+    private void updateFlipActionSummary(int value) {
+        if (mFlipAction != null) {
+            String[] summaries = getResources().getStringArray(R.array.flip_action_summary_entries);
+            mFlipAction.setSummary(getString(R.string.flip_action_summary, summaries[value]));
+        }
     }
 
     @Override
@@ -1566,6 +1581,7 @@ public class CallFeaturesSetting extends PreferenceActivity
         mButtonTTY = (ListPreference) findPreference(BUTTON_TTY_KEY);
         mVoicemailProviders = (ListPreference) findPreference(BUTTON_VOICEMAIL_PROVIDER_KEY);
         mButtonBlacklist = (PreferenceScreen) findPreference(BUTTON_BLACKLIST);
+        mFlipAction = (ListPreference) findPreference(FLIP_ACTION_KEY);
 
         if (mVoicemailProviders != null) {
             mVoicemailProviders.setOnPreferenceChangeListener(this);
@@ -1636,6 +1652,22 @@ public class CallFeaturesSetting extends PreferenceActivity
             }
         }
 
+<<<<<<< HEAD
+=======
+        if (mButtonNoiseSuppression != null) {
+            if (getResources().getBoolean(R.bool.has_in_call_noise_suppression)) {
+                mButtonNoiseSuppression.setOnPreferenceChangeListener(this);
+            } else {
+                prefSet.removePreference(mButtonNoiseSuppression);
+                mButtonNoiseSuppression = null;
+            }
+        }
+
+        if (mFlipAction != null) {
+            mFlipAction.setOnPreferenceChangeListener(this);
+        }
+
+>>>>>>> 3b24a4f... [2/3] Flip to Mute/Reject Call
         if (!getResources().getBoolean(R.bool.world_phone)) {
             Preference options = prefSet.findPreference(BUTTON_CDMA_OPTIONS);
             if (options != null)
@@ -1854,6 +1886,13 @@ public class CallFeaturesSetting extends PreferenceActivity
                     Phone.TTY_MODE_OFF);
             mButtonTTY.setValue(Integer.toString(settingsTtyMode));
             updatePreferredTtyModeSummary(settingsTtyMode);
+        }
+
+        if (mFlipAction != null) {
+            int flipAction = Settings.System.getInt(getContentResolver(),
+                    Settings.System.CALL_FLIP_ACTION_KEY, 2);
+            mFlipAction.setValue(String.valueOf(flipAction));
+            updateFlipActionSummary(flipAction);
         }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(
