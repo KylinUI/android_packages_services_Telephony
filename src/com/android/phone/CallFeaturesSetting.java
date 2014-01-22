@@ -1652,8 +1652,6 @@ public class CallFeaturesSetting extends PreferenceActivity
             }
         }
 
-<<<<<<< HEAD
-=======
         if (mButtonNoiseSuppression != null) {
             if (getResources().getBoolean(R.bool.has_in_call_noise_suppression)) {
                 mButtonNoiseSuppression.setOnPreferenceChangeListener(this);
@@ -1667,7 +1665,6 @@ public class CallFeaturesSetting extends PreferenceActivity
             mFlipAction.setOnPreferenceChangeListener(this);
         }
 
->>>>>>> 3b24a4f... [2/3] Flip to Mute/Reject Call
         if (!getResources().getBoolean(R.bool.world_phone)) {
             Preference options = prefSet.findPreference(BUTTON_CDMA_OPTIONS);
             if (options != null)
