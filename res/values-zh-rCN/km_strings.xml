@@ -31,10 +31,6 @@
     <string name="smsc_refresh">刷新</string>
     <string name="smsc_update">更新</string>
 
-    <string name="preference_category_interface">接口</string>
-    <string name="non_intrusive_incall_title">非侵入性</string>
-    <string name="non_intrusive_incall_summary">使用非侵入性的来电对话</string>
-
     <!-- Setting title for the flip action setting. -->
     <string name="flip_action_title">翻转行为</string>
 
@@ -52,6 +48,10 @@
     <string name="summary_mute_ringer">停止响铃</string>
     <string name="summary_dismiss_call">拒绝来电</string>
 
-    <string name="personal_category">Personal settings</string>
+    <string name="personal_category">个人设置</string>
+
+    <!-- Non intrusive -->
+    <string name="non_intrusive_incall_title">非侵入式来电</string>
+    <string name="non_intrusive_incall_summary">使用非侵入式提示代替全屏来电界面</string>
 
 </resources>
