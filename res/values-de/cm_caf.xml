@@ -17,6 +17,7 @@
 -->
 <resources>
   <string name="label_puk">PUK eingeben</string>
+  <string name="puk_unlock_success">PUK erfolgreich entsperrt.</string>
   <string name="stk_cc_ss_to_dial_error">SS-Anfrage wurde in DIAL-Anfrage umgewandelt.</string>
   <string name="stk_cc_ss_to_ussd_error">SS-Anfrage wurde in USSD-Anfrage umgewandelt.</string>
   <string name="stk_cc_ss_to_ss_error">SS-Anfrage wurde in neue SS-Anfrage umgewandelt.</string>
@@ -54,12 +55,11 @@
   <string name="proceed">Weiter</string>
   <string name="xdivert_active">Aktiviert</string>
   <string name="xdivert_not_active">Deaktiviert</string>
-  <string name="managed_roaming_dialog_ok_button">Ja</string>
-  <string name="managed_roaming_dialog_cancel_button">Nein</string>
   <string name="ims_edit_title">IMS-Kontodetails</string>
   <string name="ims_accounts_title">IMS-Konto</string>
   <string name="ims_domain_address_title">IMS-Server</string>
   <string name="mo_call_type_title">Ausgehender Anruftyp</string>
+  <string name="use_ims_default_summary">IMS für alle Sprachanrufe verwenden</string>
   <string name="ims_menu_save">Speichern</string>
   <string name="ims_menu_discard">Verwerfen</string>
   <string name="remove_ims_account">Konto entfernen</string>
@@ -71,13 +71,13 @@
   <string name="editContact">Bearbeiten</string>
   <string name="sendSms">SMS senden</string>
   <string name="delete">Löschen</string>
-  <string name="set_subscription">SIM auswählen</string>
-  <string name="place_a_call1">SIM 1</string>
-  <string name="place_a_call2">SIM 2</string>
-  <string name="place_a_call3">SIM 3</string>
-  <string name="cancel_call">Abbrechen</string>
-  <string name="sub_1">SIM 1</string>
-  <string name="sub_2">SIM 2</string>
-  <string name="sub_3">SIM 3</string>
-  <string name="config_sub_title">SIM auswählen</string>
+  <string name="dial">Wählen</string>
+  <string name="set_sub_activate_success">Aktivierung erfolgreich</string>
+  <string name="set_sub_deactivate_success">Deaktivierung fehlgeschlagen</string>
+  <string name="set_sub_activate_failed">Aktivierung fehlgeschlagen</string>
+  <string name="set_sub_global_activate_failed">Globale Aktivierung fehlgeschlagen</string>
+  <string name="set_sub_global_deactivate_failed">Globale Deaktivierung fehlgeschlagen</string>
+  <string name="set_sub_deactivate_failed">Deaktivierung fehlgeschlagen</string>
+  <string name="set_sub_activate_not_supported">Aktivierung nicht unterstützt</string>
+  <string name="set_sub_deactivate_not_supported">Deaktivierung nicht unterstützt</string>
 </resources>

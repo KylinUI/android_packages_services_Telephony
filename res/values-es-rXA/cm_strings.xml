@@ -39,7 +39,7 @@
   <string name="show_ssn_label">Notificación d\'eventos</string>
   <string name="show_ssn_summary">Amosar notificación pa dellos eventos de rede rellacionaos cola xestión de llamaes</string>
   <string name="blacklist_title">Llista prieta</string>
-  <string name="blacklist_summary_disabled">Deshabilitada</string>
+  <string name="blacklist_summary_disabled">Desactivada</string>
   <string name="blacklist_summary">Van bloquiase les llamaes entrantes de númberos que tean na llista prieta</string>
   <string name="blacklist_call_notification">Bloquióse una llamada de %s</string>
   <string name="blacklist_call_notification_private_number">Bloquióse una llamada d\'un númberu priváu</string>
@@ -79,4 +79,7 @@
   <string name="choose_forward_lookup_provider_title">Fornidor pa guetar llugares</string>
   <string name="choose_people_lookup_provider_title">Fornidor pa guetar persones</string>
   <string name="choose_reverse_lookup_provider_title">Fornidor pa gueta inversa</string>
+  <string name="sub_no_sim">Ensin tarxeta SIM</string>
+  <string name="msim_call_selector_title">Llamar a <xliff:g id="number">%s</xliff:g> vía</string>
+  <string name="msim_call_selector_item">SIM<xliff:g id="index">%1$d</xliff:g>: <xliff:g id="operator">%2$s</xliff:g></string>
 </resources>
